@@ -16,9 +16,10 @@ wmname LG3D
 export JAVA_AWT_WM_NONREPARENTING_JAVA_AWT_WM_NONREPARENTING=1;
 xset r rate 400 40
 
-xrandr --output DP-4 --primary --mode 3440x1440 --rate 99.98
-
-feh -z --bg-fill ~/Bilder/background
+if [ -d "$HOME/Bilder/background" ];
+then
+	feh -z --bg-fill "$HOME/Bilder/background"
+fi
 
 if [ -x "$HOME/.screenlayout/default.sh" ];
 then
