@@ -1,0 +1,50 @@
+#!/bin/sh
+
+super + Return
+	alacritty
+
+super + @space
+	alacritty -e tmux new-session -A -s main
+
+super + r
+	dmenu_run -b -fn Iosevka
+
+super + p
+	passmenu --type -b -fn Iosevka
+
+super + alt + r
+	reboot
+
+super + alt + s
+	poweroff
+
+super + Escape
+	pkill -USR1 -x sxhkd
+
+super + alt + Escape
+	bspc wm -r
+
+super + {_,shift + }q
+	bspc node -{c,k}
+
+super + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
+
+super + period
+	bspc node biggest.local -s focused
+
+super + comma
+	bspc node -f next.local.leaf
+
+super + n
+	bspc node -f next.local.leaf
+
+super + h
+	bspc desktop -l next
+
+
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

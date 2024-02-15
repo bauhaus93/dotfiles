@@ -1,0 +1,31 @@
+#!/bin/sh
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc config border_width        1
+bspc config window_gap          3
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a AlacrittyFloat state=floating
+bspc rule -a Nm-connection-editor state=floating
+
+wmname LG3D
+export JAVA_AWT_WM_NONREPARENTING_JAVA_AWT_WM_NONREPARENTING=1;
+xset r rate 400 40
+
+xrandr --output DP-4 --primary --mode 3440x1440 --rate 99.98
+
+feh -z --bg-fill ~/Bilder/background
+
+if [ -x "$HOME/.screenlayout/default.sh" ];
+then
+	"$HOME/.screenlayout/default.sh"
+fi
+
+if [ -x "$HOME/.config/bspwm/launch_apps.sh" ];
+then
+	"$HOME/.config/bspwm/launch_apps.sh"
+fi

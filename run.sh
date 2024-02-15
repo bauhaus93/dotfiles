@@ -2,4 +2,4 @@
 
 DIR=`dirname $(readlink -f $0)`
 
-stow -v -t "$HOME" -d "$DIR" .
+stow -v --no-folding -t "$HOME" -d "$DIR" .
