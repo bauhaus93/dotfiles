@@ -25,6 +25,8 @@ setopt prompt_subst
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
+eval "$(zoxide init --cmd j zsh)"
+
 alias ls='ls --color=auto -lh'
 alias cdp='cd ~/Dokumente/Programmieren'
 alias cdd='cd ~/Downloads'
