@@ -103,8 +103,7 @@ nnoremap gg ggzz
 nnoremap G Gzz
 
 " easymotion
-nnoremap <leader>s <Plug>(easymotion-s2)
-nnoremap <leader>l <Plug>(easymotion-line)
+nnoremap <leader><leader> <Plug>(easymotion-s2)
 
 " ag/fzf bindings
 nnoremap <leader>fc "ayiw :Ag <C-r>a<CR>
