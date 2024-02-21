@@ -27,6 +27,16 @@ setopt HIST_IGNORE_ALL_DUPS
 
 eval "$(zoxide init --cmd j zsh)"
 
+if [[ -d "$HOME/.local/bin" ]];
+then
+    path+="$HOME/.local/bin"
+fi
+
+if [[ -d "$HOME/.bin" ]];
+then
+    path+="$HOME/.bin"
+fi
+
 alias ls='ls --color=auto -lh'
 alias cdp='cd ~/Dokumente/Programmieren'
 alias cdd='cd ~/Downloads'
