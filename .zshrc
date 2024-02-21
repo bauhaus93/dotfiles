@@ -39,7 +39,6 @@ RPROMPT="%B%*"
 export EDITOR=/bin/vim
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore .cargo -g ""'
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-exportkk
 bindkey '^R' history-incremental-search-backward
 # source /usr/share/nvm/init-nvm.sh
 
