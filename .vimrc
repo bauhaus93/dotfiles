@@ -47,7 +47,28 @@ Plugin 'dense-analysis/ale'
 Plugin 'alx741/vim-hindent'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'preservim/nerdtree'
 call vundle#end()
+
+function! MakeSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  if (filewritable(b:sessiondir) != 2)
+    exe 'silent !mkdir -p ' b:sessiondir
+    redraw!
+  endif
+  let b:filename = b:sessiondir . '/session.vim'
+  exe "mksession! " . b:filename
+endfunction
+
+function! LoadSession()
+  let b:sessiondir = $HOME . "/.vim/sessions" . getcwd()
+  let b:sessionfile = b:sessiondir . "/session.vim"
+  if (filereadable(b:sessionfile))
+    exe 'source ' b:sessionfile
+  else
+    echo "No session loaded."
+  endif
+endfunction
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 match ErrorMsg '\s\+$'
@@ -98,6 +119,16 @@ let g:EasyMotion_keys = 'neiotsraluypfwkmvcxjhkgdb'
 nnoremap gd :ALEGoToDefinition<CR>
 nnoremap gr :ALEFindReferences<CR>
 
+" nerdtree
+
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFocus<CR>
+
+" session
+
+nnoremap <leader>sl :call LoadSession()<CR>
+nnoremap <leader>ss :call MakeSession()<CR>
+
 "center on g/G
 nnoremap gg ggzz
 nnoremap G Gzz
@@ -115,10 +146,8 @@ nnoremap <leader>fw :Ag<CR>
 " nnoremap <leader>d <C-]>
 
 " tab/buffer navigation
-nnoremap <silent> <C-h> :tabprev<CR>
-nnoremap <silent> <C-l> :tabnext<CR>
-nnoremap <silent> <C-j> :bprev<CR>
-nnoremap <silent> <C-k> :bnext<CR>
+nnoremap <silent> <leader>n :tabprev<CR>
+nnoremap <silent> <leader>p :tabnext<CR>
 
 
 augroup bindings_switch_hdr_src
@@ -132,4 +161,9 @@ augroup end
 augroup other_stuff
 	autocmd!
 	autocmd BufNewFile,BufRead *.elm,*.yml,*.yaml,*.hs set expandtab
+augroup end
+
+augroup nerdtree
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 augroup end
