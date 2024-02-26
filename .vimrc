@@ -121,8 +121,8 @@ nnoremap gr :ALEFindReferences<CR>
 
 " nerdtree
 
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFocus<CR>
+nnoremap <leader>tt :NERDTreeToggle<CR>
+nnoremap <leader>tf :NERDTreeFind<CR>
 
 " session
 
