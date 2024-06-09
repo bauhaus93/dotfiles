@@ -4,6 +4,7 @@
 sxhkd &
 dunst &
 nm-applet &
+blueman-applet &
 flameshot &
 killall -q udiskie
 udiskie --smart-tray -f 'alacritty --working-directory' &

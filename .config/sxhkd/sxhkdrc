@@ -28,16 +28,16 @@ super + {_,shift + }q
 	bspc node -{c,k}
 
 super + {t,s,f}
-	bspc node -t {tiled,floating,fullscreen}
+	bspc node -t {tiled,floating -g sticky,fullscreen}
 
-super + period
+super + S
+	bspc node -g sticky
+
+super + h
 	bspc node biggest.local -s focused
 
-super + comma
-	bspc node -f next.local.leaf
-
 super + n
-	bspc node -f next.local.leaf
+	bspc node -f next.local.leaf.!sticky
 
 super + h
 	bspc desktop -l next
