@@ -139,15 +139,13 @@ nnoremap <leader><leader> <Plug>(easymotion-s2)
 " ag/fzf bindings
 nnoremap <leader>fc "ayiw :Ag <C-r>a<CR>
 nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fo :BLines<CR>
 nnoremap <leader>fw :Ag<CR>
 
-" ctags bindings
-" nnoremap <silent> <leader>t :execute system("ctags -R", "$CWD")<CR>:echom "Updated tags"<CR>
-" nnoremap <leader>d <C-]>
-
 " tab/buffer navigation
-nnoremap <silent> <leader>n :tabprev<CR>
-nnoremap <silent> <leader>p :tabnext<CR>
+nnoremap <silent> <leader>n <C-w>w<CR>
 
 
 augroup bindings_switch_hdr_src
