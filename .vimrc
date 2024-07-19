@@ -145,7 +145,7 @@ nnoremap <leader>fo :BLines<CR>
 nnoremap <leader>fw :Ag<CR>
 
 " tab/buffer navigation
-nnoremap <silent> <leader>n <C-w>w<CR>
+nnoremap <silent> <leader>n :tabnext<CR>
 
 
 augroup bindings_switch_hdr_src
