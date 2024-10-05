@@ -14,6 +14,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a AlacrittyFloat state=floating
+bspc rule -a Bitwarden state=floating sticky=on center=on
 bspc rule -a Nm-connection-editor state=floating
 bspc rule -a "*::pavucontrol" state=floating sticky=on
 bspc rule -a "*:Toolkit:Picture-in-Picture" state=floating sticky=on follow=off focus=on

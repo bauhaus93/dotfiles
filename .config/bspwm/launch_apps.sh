@@ -6,6 +6,7 @@ dunst &
 nm-applet &
 blueman-applet &
 flameshot &
+bitwarden-desktop &
 killall -q udiskie
 udiskie --smart-tray -f 'alacritty --working-directory' &
 picom -b
